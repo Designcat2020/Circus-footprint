@@ -104,29 +104,31 @@ map.on('load', function () {
     document.getElementById('active-hour').innerText = year;
     // popup setup
 
-    map.on('mousemove', 'events', (e) => {
+   map.on('mouseenter', 'events', (e) => {
       // Change the cursor style as a UI indicator.
-      map.getCanvas().style.cursor = 'pointer';
+      map.getCanvas().style.cursor = 'pointer';});
 
-      // Use the first found feature.
-      const circus = e.features[0].properties.Circus;
-      const cityName = e.features[0].properties.City;
-      const days = e.features[0].properties.Items;
-
-      popup
-        .setLngLat(e.lngLat)
-        .setHTML(
-          '<strong>' + 'Events '+'in '+ year +' '+ cityName +': </strong>'
-          + '<br>' + circus + '<br>' 
-          + 'for <strong>' + days + '</strong> times.'
-            )
-        .addTo(map);
+    map.on('click','events',(e) =>{
+       // Use the first found feature.
+       const circus = e.features[0].properties.Circus;
+       const cityName = e.features[0].properties.City;
+       const days = e.features[0].properties.Items;
+ 
+       popup
+         .setLngLat(e.lngLat)
+         .setHTML(
+           '<strong>' + 'Events '+'in '+ year +' '+ cityName +': </strong>'
+           + '<br>' + circus + '<br>' 
+           + 'for <strong>' + days + '</strong> times.'
+             )
+         .addTo(map);
+ 
 
     });
 
     map.on('mouseleave', 'events', () => {
       map.getCanvas().style.cursor = '';
-      popup.remove();
+      // popup.remove();
     });
   });
 
