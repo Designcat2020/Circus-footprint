@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Events</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+  <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.js"></script>
+  <link href="https://api.tiles.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.css" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+  <div id="map"></div>
+  <div id="console1">
+    <h3>Touring Circus Footprint</h3>
+    <!-- <p>
+      Data from the research of "Circus Tour in Asia from 1861-1911"
+     
+    </p> -->
+    <div class="session">
+      <p<small>Events:</small> </p>
+      <div class="row colors"></div>
+      <div class="row labels">
+        <div class="label">5</div>
+        <div class="label">10</div>
+        <div class="label">15</div>
+        <div class="label">20</div>
+        <div class="label">30+</div>
+        
+      </div>
+    </div>
+  </div>
+  <div id="console2">
+    <div class="session">
+      <h2><label id="active-hour"></label>  YEAR</h2>
+      <input id="slider" class="row1" type="range" min="1861" max="1911" step="1" value="50" list="tickmarks"/>
+      <div>
+        <div class="label1">1864</div>
+        <div class="label1">1873</div>
+        <div class="label1">1882</div>
+        <div class="label1">1890</div>
+        <div class="label1">1899</div>
+        <div class="label1">1908</div>
+          </div>
+    </div>
+  </div> 
+  <script type='text/javascript' src="map.js">
+  </script>
+</body>
+
+</html>
