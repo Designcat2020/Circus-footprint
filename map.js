@@ -129,6 +129,6 @@ map.on('load', function () {
       popup.remove();
     });
   });
-
+map.addControl(new mapboxgl.FullscreenControl());
 
 });
